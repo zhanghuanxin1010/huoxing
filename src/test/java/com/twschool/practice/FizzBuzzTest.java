@@ -52,4 +52,16 @@ public class FizzBuzzTest {
         //then
         Assert.assertEquals("Whizz", result);
     }
+   //3,5
+    @Test
+    public void should_return_FizzBuzz_when_can_be_divide_3_5() {
+        FizzBuzz fizzBuzz =new FizzBuzz();
+        //given
+        int number =15;
+        //when
+        String result=fizzBuzz.say(number);
+
+        //then
+        Assert.assertEquals("FizzBuzz", result);
+    }
 }

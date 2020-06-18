@@ -6,12 +6,20 @@ public class FizzBuzz{
     {
         if(number==1)
             return "1";
-        else if(number%3==0)
-           return "Fizz";
-        else if(number%5==0)
+       if(number%3==0)
+        {
+            if (number%5==0)
+                return "FizzBuzz";
+            else
+                return "Fizz";
+        }
+
+         if(number%5==0)
             return "Buzz";
-        else if(number%7==0)
+         if(number%7==0)
             return "Whizz";
+         if(number%15==0)
+            return "FizzBuzz";
         return "0";
 
     }
