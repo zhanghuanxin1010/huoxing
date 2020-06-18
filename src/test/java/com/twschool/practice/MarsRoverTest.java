@@ -196,4 +196,25 @@ public class MarsRoverTest {
         Assert.assertEquals(0, marsRoverPosition.getMarsRoverPositionY());
         Assert.assertEquals("W", marsRoverPosition.getDirection());
     }
+
+    //初始方向为W
+    @Test
+    public void should_return_position_x_1_y0_W_when_given_M()
+    {
+        //given
+
+        MarsRoverPosition initcordirection=new MarsRoverPosition(0,0,"W");
+        MarsRover marsRover=new MarsRover(initcordirection);
+        String commands="M";
+        //when
+        //Cordirection retult=
+        marsRover.execute(commands);
+
+        //then
+        MarsRoverPosition marsRoverPosition = marsRover.getMarsRoverPosition();
+        Assert.assertEquals(-1, marsRoverPosition.getMarsRoverPositionX());
+        Assert.assertEquals(0, marsRoverPosition.getMarsRoverPositionY());
+        Assert.assertEquals("W", marsRoverPosition.getDirection());
+    }
+
 }
