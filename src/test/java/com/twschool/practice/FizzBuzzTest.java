@@ -31,14 +31,14 @@ public class FizzBuzzTest {
         Assert.assertEquals("Fizz", result);
     }
     @Test
-    public void should_return_Fizz_when_given_5() {
+    public void should_return_Whizz_when_given_5() {
         FizzBuzz fizzBuzz =new FizzBuzz();
         //given
-        int number =3;
+        int number =5;
         //when
         String result=fizzBuzz.say(number);
 
         //then
-        Assert.assertEquals("Fizz", result);
+        Assert.assertEquals("Whizz", result);
     }
 }
