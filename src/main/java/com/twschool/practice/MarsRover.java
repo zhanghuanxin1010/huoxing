@@ -9,9 +9,15 @@ public class MarsRover {
         this.marsRoverPosition = marsRoverPosition;
     }
 
-    public static MarsRoverPosition execute() {
+    public void execute(String commands) {
 
-        return null;
+        if (commands=="M")
+        {
+            String direction = marsRoverPosition.getDirection();
+            if (direction=="N")
+            marsRoverPosition.setCoordinationY(marsRoverPosition.getMarsRoverPositionY()+1);
+        }
+
     }
 
     public MarsRoverPosition getMarsRoverPosition() {

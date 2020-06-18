@@ -20,5 +20,23 @@ public class MarsRoverTest {
         Assert.assertNotNull(marsRoverPosition);
 
     }
+    @Test
+    public void should_return_position_x0_y1_N_when_given_M()
+    {
+        //given
 
+        MarsRoverPosition initcordirection=new MarsRoverPosition(0,0,"N");
+        MarsRover marsRover=new MarsRover(initcordirection);
+        String commands="M";
+        //when
+         //Cordirection retult=
+        marsRover.execute(commands);
+
+        //then
+        MarsRoverPosition marsRoverPosition = marsRover.getMarsRoverPosition();
+        Assert.assertEquals(0, marsRoverPosition.getMarsRoverPositionX());
+        Assert.assertEquals(1, marsRoverPosition.getMarsRoverPositionY());
+        Assert.assertEquals("N", marsRoverPosition.getDirection());
+
+    }
 }
