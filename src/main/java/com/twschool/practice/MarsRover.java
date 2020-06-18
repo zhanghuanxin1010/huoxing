@@ -46,7 +46,7 @@ public class MarsRover {
             if (commands=="L")
                 marsRoverPosition.setDirection("S");
             if (commands=="R")
-                marsRoverPosition.setDirection("W");
+                marsRoverPosition.setDirection("N");
         }
 
     }
