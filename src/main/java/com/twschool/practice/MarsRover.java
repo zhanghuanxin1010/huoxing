@@ -10,12 +10,13 @@ public class MarsRover {
     }
 
     public void execute(String commands) {
-
-        if (commands=="M")
+        String direction = marsRoverPosition.getDirection();
+          if (direction=="N")
         {
-            String direction = marsRoverPosition.getDirection();
-            if (direction=="N")
+            if (commands=="M")
             marsRoverPosition.setCoordinationY(marsRoverPosition.getMarsRoverPositionY()+1);
+            if (commands=="L")
+                marsRoverPosition.setDirection("w");
         }
 
     }
