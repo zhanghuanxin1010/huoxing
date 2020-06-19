@@ -22,8 +22,14 @@ public class GuessNumberTest {
 
     //数字全对，位置部分对
     @Test
-    public void should_return_1A3B_when_given_section_position_section_number()
+    public void should_return_4A0B_when_given_1234_answer_1234()
     {
+        //given
+        GamberAnswer answer=new GamberAnswer("1 2 3 4");
+        //when
+        String result =answer.check("1 2 3 4");
+        //then
+        Assert.assertEquals("4A0B",result);
 
     }
     //数字部分对，位置部分对
