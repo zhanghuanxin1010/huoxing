@@ -8,7 +8,8 @@ public class GamberAnswer {
 
 
     private final List<String> GameAnswer;
-    
+    private int valuecorrectAndPositionINCorrent;
+
 
     public GamberAnswer(String GamberAnswer) {
      this.GameAnswer= Arrays.asList(GamberAnswer.split(" "));
@@ -24,10 +25,14 @@ public class GamberAnswer {
             if(userAnswerNumber.get(index).equals(GameAnswer.get(index))) {
                 valueAndPositionCorrect++;
             }
+            else if ( GameAnswer.contains(userAnswerNumber.get(index))   )
 
+            {
+              valuecorrectAndPositionINCorrent ++;
+            }
 
         }
-        return   valueAndPositionCorrect + "A0B" ;
+        return   valueAndPositionCorrect + "A" +valuecorrectAndPositionINCorrent+"B" ;
     }
 }
 
