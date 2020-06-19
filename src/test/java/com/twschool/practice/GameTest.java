@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.stubbing.Answer;
 
-public class GuessNumberTest {
+public class GameTest {
 
 
 
@@ -60,6 +60,21 @@ public class GuessNumberTest {
         String result =answer.check("2 3 5 6");
         //then
         Assert.assertEquals("0A2B",result);
+    }
+
+
+    @Test
+    public void should_return_succeed_when_given_1234_answer_1234()
+    {
+        //given
+        GamberAnswer answer=new GamberAnswer("1 2 3 4");
+        GuessNumberGame guessNumberGame=new GuessNumberGame(answer);
+        //when
+        guessNumberGame.guess("1 2 3 4");
+        GameStatus gameStatus=guessNumberGame.getStatus();
+        //then
+        Assert.assertEquals(GameStatus.Succeed,gameStatus);
+
     }
 
 }
