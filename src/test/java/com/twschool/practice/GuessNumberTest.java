@@ -7,7 +7,6 @@ import org.mockito.stubbing.Answer;
 public class GuessNumberTest {
 
 
-    //数字全对，位置全对
     @Test
     public void should_return_4A_when_given_1234_answer_1234()
     {
@@ -20,7 +19,6 @@ public class GuessNumberTest {
 
     }
 
-    //数字全对，位置部分对
     @Test
     public void should_return_4A0B_when_given_1234_answer_1234()
     {
@@ -32,7 +30,6 @@ public class GuessNumberTest {
         Assert.assertEquals("4A0B",result);
 
     }
-    //数字部分对，位置部分对
     @Test
     public void should_return_0A4B_when_given_4321_answer_1234()
     {
@@ -43,11 +40,15 @@ public class GuessNumberTest {
         //then
         Assert.assertEquals("0A4B",result);
     }
-    //数字全对，位置全不对
     @Test
-    public void should_return_4B_when_given_not_position_all_number()
+    public void should_return_1A3B_when_given_1423_answer_1234()
     {
-
+        //given
+        GamberAnswer answer=new GamberAnswer("1 2 3 4");
+        //when
+        String result =answer.check("1 4 2 3");
+        //then
+        Assert.assertEquals("1A3B",result);
     }
     //数字部分对，位置全不对
     @Test
