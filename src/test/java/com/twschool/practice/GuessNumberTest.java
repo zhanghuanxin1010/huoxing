@@ -52,9 +52,14 @@ public class GuessNumberTest {
     }
     //数字部分对，位置全不对
     @Test
-    public void should_return_2B_when_given_not_position_section_number()
+    public void should_return_1A1B_when_given_1563_answer_1234()
     {
-
+        //given
+        GamberAnswer answer=new GamberAnswer("1 2 3 4");
+        //when
+        String result =answer.check("1 5 6 3");
+        //then
+        Assert.assertEquals("1A1B",result);
     }
    //数字全部对，位置全不对
     @Test
