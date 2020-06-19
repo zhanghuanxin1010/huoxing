@@ -10,8 +10,26 @@ public class MarsRover {
     }
 
     public void execute(String commands) {
-        String direction = marsRoverPosition.getDirection();
-          if (direction=="N")
+       // String direction = marsRoverPosition.getDirection();
+
+        if (commands.equals("L"))
+        {
+            turnleft();
+        }
+        if (commands=="R")
+        {
+            turnright();
+        }
+        if (commands=="M")
+        {
+            move();
+        }
+
+
+
+
+
+       /*   if (direction=="N")
         {
             if (commands=="M")
             marsRoverPosition.setCoordinationY(marsRoverPosition.getMarsRoverPositionY()+1);
@@ -48,8 +66,11 @@ public class MarsRover {
             if (commands=="R")
                 marsRoverPosition.setDirection("N");
         }
-
+*/
     }
+
+
+
 
     public MarsRoverPosition getMarsRoverPosition() {
         return marsRoverPosition;
@@ -60,5 +81,32 @@ public class MarsRover {
     }
 
 
+    private void move() {
+       Direction direction=marsRoverPosition.getDirection();
+      switch (direction)
+      {
+          case E:
+              marsRoverPosition.setMarsRoverPositionX(marsRoverPosition.getMarsRoverPositionX()+1);
+              break;
+          case N:
+              marsRoverPosition.setCoordinationY(marsRoverPosition.getMarsRoverPositionY()+1);
+              break;
+          case S:
+              marsRoverPosition.setCoordinationY(marsRoverPosition.getMarsRoverPositionY()-1);
+              break;
+          case W:
+              marsRoverPosition.setMarsRoverPositionX(marsRoverPosition.getMarsRoverPositionX()-1);
+              break;
+      }
+
+    }
+    private void turnleft() {
+        Direction directionl=marsRoverPosition.getDirection().leftdirection();
+        marsRoverPosition.setDirection(directionl);
+    }
+    private void turnright() {
+        Direction directionr=marsRoverPosition.getDirection().rightdirection();
+        marsRoverPosition.setDirection(directionr);
+    }
 
 }

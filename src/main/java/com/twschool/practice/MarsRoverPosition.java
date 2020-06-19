@@ -3,12 +3,12 @@ package com.twschool.practice;
 public class MarsRoverPosition {
     private int coordinationX;
     private int coordinationY;
-    private String direction;
+    private Direction direction;
 
     public MarsRoverPosition(int coordinationX, int coordinationY, String direction) {
      this.coordinationX =coordinationX;
      this.coordinationY = coordinationY;
-     this.direction=direction;
+     this.direction=Direction.valueOf(direction);
     }
 
     public int getMarsRoverPositionX() {
@@ -17,7 +17,7 @@ public class MarsRoverPosition {
     public int  getMarsRoverPositionY() {
         return coordinationY;
     }
-    public String getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
@@ -29,7 +29,7 @@ public class MarsRoverPosition {
         this.coordinationY = coordinationY;
     }
 
-    public void setDirection(String direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
     }
 }
