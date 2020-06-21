@@ -8,7 +8,7 @@ public class GamberAnswer {
 
 
     private final List<String> GameAnswer;
-    private int valuecorrectAndPositionINCorrent;
+    private int valuecorrectAndPositionINCorrent=0;
 
 
     public GamberAnswer(String GamberAnswer) {

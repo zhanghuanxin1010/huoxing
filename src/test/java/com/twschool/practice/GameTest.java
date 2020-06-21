@@ -76,5 +76,34 @@ public class GameTest {
         Assert.assertEquals(GameStatus.Succeed,gameStatus);
 
     }
+    @Test
+    public void should_return_failed_when_given_1234_6_times_answer_1234()
+    {
+        //given
+        GamberAnswer answer=new GamberAnswer("1 2 3 4");
+        GuessNumberGame guessNumberGame=new GuessNumberGame(answer);
+        //when
+        guessNumberGame.guess("5 6 7 8");
+        guessNumberGame.guess("5 6 7 8");
+        guessNumberGame.guess("5 6 7 8");
+        guessNumberGame.guess("5 6 7 8");
+        guessNumberGame.guess("5 6 7 8");
+        guessNumberGame.guess("5 6 7 8");
+        GameStatus gameStatus=guessNumberGame.getStatus();
+        //then
+        Assert.assertEquals(GameStatus.Failed,gameStatus);
+    }
+    @Test
+    public void should_return_continue_when_given_1567_times_answer_1234()
+    {
+        //given
+        GamberAnswer answer=new GamberAnswer("1 2 3 4");
+        GuessNumberGame guessNumberGame=new GuessNumberGame(answer);
+        //when
+        guessNumberGame.guess("1 5 6 7");
 
+        GameStatus gameStatus=guessNumberGame.getStatus();
+        //then
+        Assert.assertEquals(GameStatus.Continue,gameStatus);
+    }
 }

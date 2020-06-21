@@ -1,6 +1,6 @@
 package com.twschool.practice;
 
 public enum GameStatus {
-    Succeed
+     Failed, Continue, Succeed
 
 }
